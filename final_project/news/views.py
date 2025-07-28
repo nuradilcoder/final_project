@@ -9,5 +9,7 @@ def news_list(request):
 
 def news_detail(request, id):
     news = get_object_or_404(News, id=id)
+    news.views_count += 1
+    news.save( update_fields=['views_count'] )
     context = {'news' : news}
     return render(request, 'news_detail.html', context )
