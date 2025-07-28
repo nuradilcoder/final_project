@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title> Akispres </title>
+    <link rel="stylesheet" href="{% static 'css/news_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+</head>
+<body>
+   <div class="news-card" >
+   <h1> Akispres-Главный новостной сайт </h1>
+   </div>
+
+    <button class="theme-toggle" onclick="toggleTheme()">Сменить тему</button>
+
+    <div class="news-container">
+        {% for news in news %}
+        <div class="news-card">
+            <h2>{{ news.title }}</h2>
+
+            {% if news.news_image %}
+                <img src="{{ news.news_image.url }}" alt="{{ news.title }}">
+            {% else %}
+                <p><i>Фото нет</i></p>
+            {% endif %}
+
+            <p> {{ news.description|truncatewords:5 }}... </p>
+            <p>Дата создания: {{ news.created_at }}</p>
+            <p>Просмотры: {{ news.views_count }}</p>
+
+            <form action="{% url 'news_detail' news.id %}" method="post">
+                {% csrf_token %}
+                <button>Подробнее</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="footer">
+        <p>Подробнее о нас: +76 444 55 666</p>
+        <p><a href="{% url 'news_list' %}">Это наш 2-сайт</a></p>
+    </div>
+
+    <script src="{% static 'js/theme.js' %}"></script>
+</body>
+</html>
