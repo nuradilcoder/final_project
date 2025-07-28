@@ -1,16 +1,19 @@
 {% load static %}
+<h2><a href="{% url 'news_list' %}" > На главный сайт </a></h2>
 <link rel="stylesheet" href="{% static 'news_detail.css' %}">
 
 <div class="news-detail">
    <h2>Название: {{ news.title }}</h2>
-   <h2>{{ news.description }}</h2>
-
-   {% if news.image %}
-      <img src="{{ news.image.url }}" alt="Фото новости" style="max-width: 100%; height: auto;">
+   {% if news.news_image %}
+      <img src="{{ news.news_image.url }}" alt="{{ news.title }}">
    {% else %}
-      <h5>Фото нет</h5>
+      <p>Фото нет</p>
    {% endif %}
 
+   <h2>{{ news.description }}</h2>
    <p>Дата создания: {{ news.created_at }}</p>
    <p>Просмотры: {{ news.views_count }}</p>
 </div>
+
+<p> Подробнее о нас +76 444 55 666</p>
+<p> <a href="{% url 'news_list' %}"> Это наш 2-сайт </a>  </p>
