@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'news_detail.css' %}">
+
+<div class="news-detail">
+   <h2>Название: {{ news.title }}</h2>
+   <h2>{{ news.description }}</h2>
+
+   {% if news.image %}
+      <img src="{{ news.image.url }}" alt="Фото новости" style="max-width: 100%; height: auto;">
+   {% else %}
+      <h5>Фото нет</h5>
+   {% endif %}
+
+   <p>Дата создания: {{ news.created_at }}</p>
+   <p>Просмотры: {{ news.views_count }}</p>
+</div>
