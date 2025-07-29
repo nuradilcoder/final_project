@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ news.title }} | Новость</title>
+    <link rel="stylesheet" href="{% static 'css/news_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+    <link rel="preload" href="{% static 'css/theme.css' %}" as="style">
+    <!--<link rel="preload" href="{% static 'js/theme.js' %}" as="script">-->
+</head>
+<body class="{{ theme }}">
+
+    <div class="news-detail">
+        <h2>{{ news.title }}</h2>
+
+        {% if news.news_image %}
+            <img src="{{ news.news_image.url }}" alt="{{ news.title }}">
+        {% else %}
+            <p><i>Фото нет</i></p>
+        {% endif %}
+
+        <p>{{ news.description }}</p>
+        <p><strong>Дата создания:</strong> {{ news.created_at }}</p>
+        <p><strong>Просмотры:</strong> {{ news.views_count }}</p>
+
+        <a href="{% url 'news_list' %}">← Назад к списку новостей</a>
+    </div>
+
+    <footer style="text-align:center; margin-top:20px;">
+        <p>Подробнее о нас: +76 444 55 666</p>
+    </footer>
+
+    <!--<script src="{% static 'js/theme.js' %}"></script>-->
+</body>
+</html>
