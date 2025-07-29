@@ -6,9 +6,10 @@
     <title>{{ news.title }} | Новость</title>
     <link rel="stylesheet" href="{% static 'css/news_detail.css' %}">
     <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+    <link rel="preload" href="{% static 'css/theme.css' %}" as="style">
+    <link rel="preload" href="{% static 'js/theme.js' %}" as="script">
 </head>
 <body>
-    <button class="theme-toggle" onclick="toggleTheme()">Сменить тему</button>
 
     <div class="news-detail">
         <h2>{{ news.title }}</h2>
