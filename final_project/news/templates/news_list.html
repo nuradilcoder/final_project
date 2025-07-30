@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="{% static 'css/news_list.css' %}">
     <link rel="stylesheet" href="{% static 'css/theme.css' %}">
     <link rel="preload" href="{% static 'css/theme.css' %}" as="style">
-    <!--<link rel="preload" href="{% static 'js/theme.js' %}" as="script">-->
+    <link rel="preload" href="{% static 'js/theme.js' %}" as="script">
 </head>
 <body class="{{ theme }}">
    <div class="news-card" >
    <h1> Akispres-Главный новостной сайт</h1>
-   <div id="clock" style="text-align:left; font-size:22px; margin-top:14px;"></div>
+   <div id="clock" style="text-align:left; font-size:24px; margin-top:16px;"></div>
     <div class="theme-indicator" onclick="toggleTheme()" style="cursor: pointer;">
         <span id="theme-text" style="font-size: 18px; font-weight: bold;"></span>
     </div>
@@ -46,6 +46,6 @@
         <p>Подробнее о нас: +76 444 55 666</p>
     </div>
 
-    <!--<script src="{% static 'js/theme.js' %}"></script>-->
+    <script src="{% static 'js/theme.js' %}"></script>
 </body>
 </html>

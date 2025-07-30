@@ -7,7 +7,7 @@ def news_list(request):
     theme = request.GET.get('theme', '1')
     if theme == '1':
         theme_text = 'dark-theme'
-        theme = 0
+        theme = 0   
         png = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPElEQVQ4T6WTvU4CURCFv7v+IIXrqrHQ2k4bRaIFPU9B688jaK+PYDSWxIewpyAB7YyF9hZmcYGCKMo4l4i5wu6K4XZ75+yZc2bONaQcuWfWls0G70kwk0bwWqNk64t5ymMRvFSYXynQHoDjCIYxPwrCKv7UNDfGUFrI8SSPZNpttkUQf447a6N5y7p+lz8/KC7v0erbc6VZQA8KCspq4dSq/643jHAiHm8eVGyDwX8jM2jUOdLL8zjPSnIY5Ll0a78IrOyoybPTeZgnDLKsuVsxUmcmEp22R88THtRCNW0zitlVzKbFB8L15ARuNxucqNO3sJSgIgxg1ezQTRxiVONADBexQzTsBzmuEoc4WKPpkVGSM0dJqPk4FugmrnEkSGqn1WHLdvPRIKnsP4M0UZTjPP/7MQ2TjPOcvwBMYo+xs0V5BAAAAABJRU5ErkJggg=="
     else:
         theme_text = 'light-theme'
